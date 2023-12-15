@@ -1,0 +1,10 @@
+<div class="container" [ngClass]="{liked : faceSnapLocation.snapStatus}">
+    <h1>{{faceSnapLocation.title | uppercase}}</h1>
+    <p>{{faceSnapLocation.description}}</p>
+    <div class="center">
+        <button class="btn btn-primary" [routerLink]="[faceSnapLocation.id]">see details by [routerLink]</button>
+        <button class="btn btn-secondary" (click)="onClick1(faceSnapLocation.id)">see details by 'method'</button>
+        <button class="btn btn-success" (click)="onClick2(faceSnapLocation.id)">see details by `method`</button>
+        <button class="btn btn-warning" (click)="onClick3(faceSnapLocation.id)">see details by (Navigate)</button>
+    </div>
+</div>

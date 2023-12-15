@@ -1,0 +1,10 @@
+<div class="container" [ngClass]="{liked : faceSnapLocation.snapStatus}">
+    <h1>{{faceSnapLocation.title | uppercase}}</h1>
+    <p>Posted at <span style="color: gray;">{{faceSnapLocation.createdDate | date: 'hh:mma , dd MMMM yyyy'}}</span></p>
+    <p  *ngIf="faceSnapLocation.location"><em>This picture taken in {{faceSnapLocation.location | lowercase}}</em></p>
+    <p>{{faceSnapLocation.description}}</p>
+    <img [src]="faceSnapLocation.imageUrl" alt="image" width="260px">
+    <div>
+        <button class="btn" (click)="onSnapLocation(faceSnapLocation.id)" [ngStyle]="{background: faceSnapLocation.snapStatus ? '#AAD7FF' : null}">{{faceSnapLocation.snaps}} Like</button>
+    </div>
+</div>
